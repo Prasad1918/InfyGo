@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: test 
+ 
+  mvc:
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp   
+  
+server:
+  servlet.context-path: /InfyGoBoot
+  port: 4343
+  
+  
+logging:
+  file: Errorlog.log
+  level:
+    root: warn
+    com.infoys.ars: error
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss,SSS} %5p [%t] %c [%M] - %m%n"
+    
+---  
+spring:      
+  profiles: dev
+  datasource:    
+    url: jdbc:mysql://localhost:3306/db_irs
+    datasource:
+    username: root
+    password: root 
+  jpa:
+    show-sql: true
+   #Please modify the username and password as per your database
+---
+spring:      
+  profiles: test
+  datasource:    
+    url: jdbc:hsqldb:mem:scratchdb/db_irs
+    username: sa
+    password:      
+  jpa:
+    show-sql: true
+    #Please modify the username and password as per your database

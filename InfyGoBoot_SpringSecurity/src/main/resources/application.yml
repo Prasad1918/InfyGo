@@ -1,0 +1,28 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp      
+ #Please modify the username and password as per your database
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/db_irs
+
+server:
+  servlet.context-path: /InfyGoBoot
+  port: 4242
+  
+  
+logging:
+  file: Errorlog.log
+  level:
+    root: info
+    com.infoys.ars: info
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss,SSS} %5p [%t] %c [%M] - %m%n"
+
+
+
+  
+    
